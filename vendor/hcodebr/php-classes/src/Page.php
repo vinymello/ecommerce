@@ -7,10 +7,10 @@
         private $defaults = [
             "data"=>[]
         ];
-        public function __construct($opts = array()){
+        public function __construct($opts = array(), $tpl_dir = "/views/"){
             $this->options = array_merge($this->defaults, $opts);
             $config = array(
-                "tpl_dir"   => $_SERVER["DOCUMENT_ROOT"]."/views/",	//DOCUMENT_ROOT busca a pasta raiz do projeto
+                "tpl_dir"   => $_SERVER["DOCUMENT_ROOT"].$tpl_dir,	//DOCUMENT_ROOT busca a pasta raiz do projeto
                 "cache_dir" => $_SERVER["DOCUMENT_ROOT"]."views-cache/",
                 "debug"     => false // set to false to improve the speed
             );
