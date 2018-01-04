@@ -30,7 +30,7 @@ class Product extends Model{
     }
     public function delete(){
         $sql = new Sql();
-        $sql->query("DELETE FROM tb_product WHERE idproduct = :idproduct", array(
+        $sql->query("DELETE FROM tb_products WHERE idproduct = :idproduct", array(
             ":idproduct"=> $this->getidproduct()
         ));
         Category::updateFile();
