@@ -2,6 +2,7 @@
 namespace Hcode\Model;
 use \Hcode\DB\Sql;
 use \Hcode\Model;
+use \Hcode\Mailer;
 class User extends Model{
     const SESSION = "User";
     const SECRET = "HcodePhp7_Secret";
@@ -146,7 +147,7 @@ class User extends Model{
             //Não está logado
             return false;
         } else{
-            if($inadmin === true && (bool)$_SESSION[User::SESSION]["inadmin"] === true){ 
+            if($inadmin === true && $_SESSION[User::SESSION]["inadmin"] === 1){ 
                 return true;
             }
             else if($inadmin === false){ 
