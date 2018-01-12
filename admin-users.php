@@ -36,10 +36,6 @@ $app->post('/admin/users/create', function(){
     User::verifyLogin();
     $user = new User();
     $_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
-    /*$password = password_hash($_POST["password"], PASSWORD_DEFAULT, [
-        "cost"=>12
-    ]);
-    $_POST["password"] = $password;*/
     $user->setData($_POST);
     $user->save();
     header("Location: /admin/users");
