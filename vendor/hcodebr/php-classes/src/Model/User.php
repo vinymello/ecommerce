@@ -216,7 +216,7 @@ class User extends Model{
         $result = $sql->select("SELECT * FROM tb_users WHERE deslogin = :deslogin", array(
             ":deslogin"=>$login
         ));
-        return (count($result[0]));
+        return (isset($result[0])) ? 1 : 0;
     }
 }
 ?>

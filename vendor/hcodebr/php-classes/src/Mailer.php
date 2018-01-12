@@ -20,7 +20,7 @@ class Mailer {
         }
         $html = $tpl->draw($tplName, true);
         
-        $this->mail = new \PHPMailer;
+        $this->mail = new \PHPMailer();
         $this->mail->isSMTP();
         $this->mail->SMTPDebug = 0;
         $this->mail->Debugoutput = 'html';
